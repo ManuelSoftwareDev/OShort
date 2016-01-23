@@ -18,8 +18,7 @@ error_reporting(0);
 ini_set('display_errors','Off');
 	ini_set("short_open_tag","1");
 if (checkSafeFromSession($safe)) {
-	$mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
-    $query = "DELETE FROM `$table` WHERE `uidn` = '" . $uidn . "' AND `link` = '" . $link . "'";
+    $query = "DELETE FROM `$table` WHERE `uidn` = '" . $mysqli->real_escape_string($uidn) . "' AND `link` = '" . $mysqli->real_escape_string($link) . "'";
 	$mysqli->query($query);
 	redir($lnk.'/statistikview?uidn=' . $uidn);
 }else {

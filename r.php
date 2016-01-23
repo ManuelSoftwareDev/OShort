@@ -5,7 +5,7 @@ $lnk = SHORT_DOMAIN;
 $k = $_GET["i"];
 if (isset($k)) {
 $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
-$query = "SELECT * FROM `".$table."` WHERE link = '". $k . "'";
+$query = "SELECT * FROM `".$table."` WHERE link = '".$mysqli->real_escape_string($k) . "'";
 $result = $mysqli->query($query);
 $num = $result->num_rows;
 if ($num == 0) {
@@ -14,7 +14,7 @@ if ($num == 0) {
 $row =	$result->fetch_assoc();
 $visits = $row["visits"];
 $visits = $visits + 1;
-$query = "UPDATE `".$table."` SET visits = '" . $visits . "' WHERE link = '" . $k . "'";
+$query = "UPDATE `".$table."` SET visits = '" .$mysqli->real_escape_string($visits) . "' WHERE link = '" . $mysqli->real_escape_string($k) . "'";
 $mysqli->query($query);
 safe_redirect($row["to"]);
 }

@@ -9,7 +9,7 @@ function getDatable() {
 	$uidn = $_GET["uidn"];
     if(isset($uidn)) {
 	$mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
-	$query = "SELECT * FROM `".$table."` WHERE uidn = '". $uidn . "'";
+	$query = "SELECT * FROM `".$table."` WHERE uidn = '". $mysqli->real_escape_string($uidn) . "'";
 	$result = $mysqli->query($query);
 	if ($result->num_rows == 0) {
 	require_once "link.php";

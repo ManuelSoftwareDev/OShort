@@ -1,6 +1,7 @@
 <?php
 require_once "core/config.core.php";
 require_once "func.php";
+$mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
 if (banlist($_SERVER["REMOTE_ADDR"])) {
     echo "<div class=\"alert error\">";
 	echo '<span>FEHLER:</span> Du wurdest gebannt, weil du zuviel M&uuml;ll eingetragen hast.';
@@ -21,9 +22,8 @@ if (!(isset($link))) {
 $klink = rand(10000,99999);
 $uidn = getUIDN();
 $table = DB_TABLE;
-$query = "INSERT INTO `$table` (`ip`, `to`, `link`, `uidn`, `visits`, `create`) VALUES('".$_SERVER["REMOTE_ADDR"]."', '".$link."', '".$klink."', '".$uidn."', '0', '". Date("Y-m-d") . "');";
-$mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
-$quer1 = "SELECT  * FROM `$table` WHERE `to` = '" . $link . "'";
+$query = "INSERT INTO `$table` (`ip`, `to`, `link`, `uidn`, `visits`, `create`) VALUES('".$_SERVER["REMOTE_ADDR"]."', '".$mysqli->real_escape_string($link)."', '".$mysqli->real_escape_string($klink)."', '".$mysqli->real_escape_string($uidn)."', '0', '". Date("Y-m-d") . "');";
+$quer1 = "SELECT  * FROM `$table` WHERE `to` = '" . $mysqli->real_escape_string($link) . "'";
 $resu = $mysqli->query($quer1);
 $rsa = $resu->num_rows;
 $bas = false;
