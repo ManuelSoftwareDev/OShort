@@ -1,3 +1,13 @@
+<?php
+  if($_GET["ins"] == "yes") {
+	  unlink "install.php";
+  }
+  if(file_exists("install.php") {
+	  require_once "r.php";
+	  safe_redirect('install.php');
+	  return;
+  }
+?>
 <!DOCTYPE html>
 
 <html lang="de">
