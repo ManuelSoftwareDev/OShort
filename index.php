@@ -1,8 +1,8 @@
 <?php
   if($_GET["ins"] == "yes") {
-	  unlink "install.php";
+	  unlink ("install.php");
   }
-  if(file_exists("install.php") {
+  if(file_exists("install.php")) {
 	  require_once "r.php";
 	  safe_redirect('install.php');
 	  return;
