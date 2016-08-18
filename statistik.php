@@ -3,16 +3,15 @@
 <html lang="de">
     <head>
         <meta charset="utf-8" />
-        <link rel="Stylesheet" type="text/css" href="design.css">
-	    <link rel="Stylesheet" type="text/css" href="css-box.css">
-	    <title>OShort - Statistik</title>
+        <link rel="Stylesheet" type="text/css" href="style/design.css">
+	    <title>ShortMe Statistik</title>
     </head>
 	<body>
 	    <header class="header">
-            <p>OShort</p>
+            <p>ShortMe</p>
             <nav>               
-                <a href="http://s.manuelsoftware.de/">Shortener</a>
-                <a href="statistik">Statistik</a>                
+                <a href="index.php">Shortener</a>
+                <a href="#">Statistik</a>                
             </nav>
         </header>
         <div class="sbox center logins">
@@ -21,14 +20,14 @@
             </header>
 		    <p>Bitte ID eingeben</p>
 	<form method="GET" action="statistikview.php">
-	    <input type="text" name="uidn" class="input" id="UIDN1" placeholder="Bsp: 12345" align="center" required>
-		<button class="button" type="button" value="Meine UIDN" onclick="document.location='myuidn';"> Meine UIDN </button>
+	    <input type="text" name="uidn" class="input" id="UIDN1" placeholder="123456789" align="center" required>
+		<button class="button" type="button" value="Meine UIDN" onclick="document.location='myuidn.php';"> Meine UIDN </button>
 		<button class="button" type="submit" value="Einloggen"> Einloggen </button>
 	</form>
 	<? 
-	  if (isset($_GET["m"])) {
+	  if (isset($_GET["err"])) {
 		 echo "<div class=\"alert error\">";
-		echo "<span>Fehler:</span> Auf diese UIDN wurde kein Kurzlink registriert!";
+		echo "<span>Fehler:</span> Auf diese ID wurde kein Kurzlink registriert!";
 		echo "</div>";
 	  }
 	?>
@@ -36,6 +35,6 @@
 		 <br>
 		 
 	 </div>
-     <label class="foot">&copy 2013 - <? echo date("Y"); ?> <a href="http://www.manuelsoftware.de">ManuelSoftware.de</a></label>
+     <? include_once "content/footer.html"; ?>
  </body>
 </html>

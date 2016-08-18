@@ -1,14 +1,17 @@
 <html>
-<title> Meine UIDN - OShort </title>
-<link rel="Stylesheet" type="text/css" href="css-box.css">
-<body>
+	<title> Deine UIDN - ShortMe </title>
+	<link rel="Stylesheet" type="text/css" href="style/design.css">
+	<body>
 		<div class="sbox center uidn">
-		<h3> Meine UIDN bei OShort ist: <a href="http://<? require_once "core/config.core.php"; print SHORT_DOMAIN; ?>/statistikview?uidn=<? require_once "func.php"; echo getUIDN(); ?>"><font color="yellow">	<? require_once "func.php"; echo getUIDN(); ?> </font></a></h3>
-        <p>Diese funktioniert nur, wenn du schon einen Kurzlink angelegt hast!</p>
-<style>
-			.foot { color:grey; }
-		</style>
-		<label class="foot">&copy; 2013 - <? echo date("Y"); ?> <a href="http://www.manuelsoftware.de">ManuelSoftware.de</a></label>
+		
+			<h3>Deine UIDN bei ShortMe ist: 
+			<a href="statistikview.php?uidn=<? require_once "func.php"; echo getUIDN(); ?>">
+			<font color="orange"><? require_once "func.php"; echo getUIDN(); ?></font>
+			</a>
+			</h3>
+			
+			<strong>Deine UIDN funktioniert nur, wenn du einen oder mehrere Kurzlink(s) angelegt hast.</strong>
+			<? include_once "content/footer.html"; ?>
 		</div>
-</body>
+	</body>
 </html>

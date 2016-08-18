@@ -1,0 +1,183 @@
+@media only screen and (min-width:400px) and (orientation: landscape) 
+{
+    .sbox 
+	{
+        width: 600px;
+        left: 50%;
+        margin-left: -300px;
+        -moz-box-shadow: 0px 0px 3px #000000;
+        -webkit-box-shadow: 0px 0px 3px #000000;
+        box-shadow: 0px 0px 3px #000000;
+    }
+}
+
+body 
+{
+	text-align:center;
+    background-color:  #ecf0f1;
+    font-family: 'Segoe UI';
+}
+
+.header 
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    background-color: #2c3e50;
+    color: White;
+    cursor: default;
+    font-size: x-large;
+    font-family: 'Segoe UI Light'
+}
+
+.header p 
+{
+    font-size: 40px;
+    margin: 20px;
+}
+
+.header nav 
+{
+    margin: 0px;
+    width: 100%;
+}
+
+.header nav a 
+{
+    transition: all 500ms ease-out;
+    margin: 10px;
+    text-decoration: none;
+    color: White;
+    cursor: default;
+}
+
+.header nav a:hover {color: Black;}
+
+.sbox
+{
+    float: left;
+    display: block; 
+    width: 100%;
+    text-align: center;
+    position: absolute;    
+    display: block;
+    height: 300px;
+    top: 50%;
+    left: 0px;
+    margin-left: 0px;
+    margin-top: -150px;
+}
+
+.foot 
+{
+    background-color: #2c3e50;
+    color: White;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    margin-top: -30px;
+    top: 100%;
+    left: 0px;
+}
+.foot a 
+{
+    transition: all 500ms ease-out;
+    margin: 10px;
+    text-decoration: none;
+    color: White;
+    cursor: default;
+}
+
+.foot a:hover {color: Black;}
+
+.modified 
+{
+	height: 4em;
+	width: 20em;
+}
+
+.button 
+{
+    margin: 10px;
+    padding: 10px;
+    color: White;
+    background-color: #2c3e50;
+    border: 0;
+    transition: all 500ms ease-out;
+    cursor: default;
+    text-decoration: none;
+}
+
+.button:hover {color: black;}
+
+.sbox header 
+{
+    margin: 0px;
+    font-size: 40px;
+    width: 100%;
+    height: 60px;
+    line-height: 50px;
+    background-color: #2c3e50;
+    color: White;
+    text-align: center;
+}
+
+.sbox header p 
+{
+    margin: 0px;
+}
+
+.input 
+{ 
+    padding:3px; 
+    width:90%; 
+    font-size:16px; 
+    border-width:1px; 
+    border-style:solid; 
+} 
+
+.alert 
+{
+    color:#555;
+    border-radius:10px;
+    font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+    padding:10px 10px 10px 36px;
+    margin:10px;
+}
+
+.alert span 
+{
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.error 
+{
+    background:#ffecec url('images/error.png') no-repeat 10px 50%;
+    border:1px solid #f5aca6;
+}
+
+.success 
+{
+    background:#e9ffd9 url('images/success.png') no-repeat 10px 50%;
+    border:1px solid #a6ca8a;
+}
+
+.warning 
+{
+    background:#fff8c4 url('images/warning.png') no-repeat 10px 50%;
+    border:1px solid #f2c779;
+}
+
+.notice 
+{
+    background:#e3f7fc url('images/notice.png') no-repeat 10px 50%;
+    border:1px solid #8ed9f6;
+}
+
+.css-input { padding:3px; width:400pt; font-size:16px; border-width:2px; border-color:#cccccc; border-style:solid; box-shadow: 1px -3px 5px 0px rgba(42,42,42,.77);  } 
+
+.css-input:focus { outline:none; }

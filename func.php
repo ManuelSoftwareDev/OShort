@@ -1,10 +1,12 @@
 <?php
-function getUIDN() {
-$ipaddr = $_SERVER["REMOTE_ADDR"];
-$sspit = split('[.]', $ipaddr);
-$uidns = $sspit[0] + $sspit[1] * $sspit[2] - $sspit[3];
-return $uidns;
+function getUIDN() 
+{
+$ipaddress = $_SERVER["REMOTE_ADDR"];
+$splited = split('[.]', $ipaddress);
+$uidn = $splited[0] * $splited[1] * $splited[2] - $splited[3];
+return $uidn;
 }
+
 function banlist($ip) {
   require_once "core/config.core.php";
   $table = DB_TABLE;
@@ -22,6 +24,8 @@ function banlist($ip) {
   }
   return false;
 }
+
+/*
 function ban($ip) {
   require_once "core/config.core.php";
   $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
@@ -31,21 +35,27 @@ $lnk = SHORT_DOMAIN;
   $mysqli->query($query);
   return true;
 }
-function redir($url, $exit=true) {
+*/
+
+function redir($url) {
     if (!headers_sent()){
         header('HTTP/1.1 301 Moved Permanently');
         header('Location: ' . $url);
         header("Connection: close");
     }
     print '<html>';
-    print '<head><title>ManuelSoftware Link Shortener weiterleitung...</title>';
+    print '<head><title>ShortMe Weiterleitung...</title>';
     print '<meta http-equiv="Refresh" content="0;url='.$url.'" />';
     print '</head>';
     print '<body onload="location.replace(\''.$url.'\')">';
-    print 'Solltest du nicht weitergeleitet werden, Klick:';
-    print "<a href=".$url.">hier</a><br /><br />";
+    print 'Solltest du nicht weitergeleitet werden,<br>';
+    print "<a href=".$url.">Klicke Hier</a><br /><br />";
     print '</body>';
     print '</html>';
-    if ($exit) exit;
+}
+
+function escape_string($mysqli,$unesc)
+{
+	return $mysqli->real_escape_string($unesc);
 }
 ?>
