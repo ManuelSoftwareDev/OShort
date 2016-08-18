@@ -10,6 +10,7 @@ $lnk = SHORT_DOMAIN;
 echo "<title>ShortMe Statistik</title>";
 
 function getDatable() {
+$table = DB_TABLE;
 	$uidn = $_GET["uidn"];
     if(isset($uidn)) {
 	$mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);

@@ -1,6 +1,6 @@
 <?php
 require_once "func.php";
-require_once "safemode.php";
+require_once "functions/safe.php";
 require_once "core/config.core.php";
 $table = DB_TABLE;
 $lnk = SHORT_DOMAIN;
@@ -19,10 +19,10 @@ ini_set('display_errors','Off');
 	ini_set("short_open_tag","1");
 if (checkSafeFromSession($safe)) {
 	$mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
-    $query = "UPDATE `shorten` " . " SET `visits` = 0" . " WHERE `uidn` = '" . $mysqli->real_escape_string($uidn) . "' AND `link` = '" . $mysqli->real_escape_string($link) . "'";
+    $query = "UPDATE `$table` " . " SET `visits` = 0" . " WHERE `uidn` = '" . $mysqli->real_escape_string($uidn) . "' AND `link` = '" . $mysqli->real_escape_string($link) . "'";
 	$mysqli->query($query);
-	redir($lnk.'/statistikview?uidn=' . $uidn);
+	redir('../statistikview.php?uidn=' . $uidn);
 }else {
-	redir($lnk.'/?say=error&span=Fehler&message=Falscher+Safecode!');
+	redir('../?say=error&span=Fehler&message=Falscher+Safecode!');
 }
 ?>
