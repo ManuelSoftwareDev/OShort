@@ -9,19 +9,19 @@ return $uidn;
 
 function banlist($ip) {
   require_once "core/config.core.php";
-  $table = DB_TABLE;
-  $lnk = SHORT_DOMAIN;
-  $query = 'SELECT * FROM `'.$table.'_ban`';
-  $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
-  $result = $mysqli->query($query);
-  while ($row = $result->fetch_assoc()) {
-	$results_array[] = $row;
-  }
-  foreach ($results_array as &$rows) {
-	  if ($ip == $rows["IP"]) {
-		return true;  
-	  }
-  }
+  // $table = DB_TABLE;
+  // $lnk = SHORT_DOMAIN;
+  // $query = 'SELECT * FROM `'.$table.'_ban`';
+  // $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
+  // $result = $mysqli->query($query);
+  // while ($row = $result->fetch_assoc()) {
+	// $results_array[] = $row;
+  // }
+  // foreach ($results_array as &$rows) {
+	  // if ($ip == $rows["IP"]) {
+		// return true;  
+	  // }
+  // }
   return false;
 }
 
