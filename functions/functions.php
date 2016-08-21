@@ -6,22 +6,27 @@ $splited = split('[.]', $ipaddress);
 $uidn = $splited[0] * $splited[1] * $splited[2] - $splited[3];
 return $uidn;
 }
-
+function disableErrors()
+{
+	error_reporting(0);
+	ini_set('display_errors','Off');
+	ini_set("short_open_tag","1");
+}
 function banlist($ip) {
   require_once "core/config.core.php";
-  // $table = DB_TABLE;
-  // $lnk = SHORT_DOMAIN;
-  // $query = 'SELECT * FROM `'.$table.'_ban`';
-  // $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
-  // $result = $mysqli->query($query);
-  // while ($row = $result->fetch_assoc()) {
-	// $results_array[] = $row;
-  // }
-  // foreach ($results_array as &$rows) {
-	  // if ($ip == $rows["IP"]) {
-		// return true;  
-	  // }
-  // }
+  $table = DB_TABLE;
+  $lnk = SHORT_DOMAIN;
+  $query = 'SELECT * FROM `'.$table.'_ban`';
+  $mysqli = new mysqli(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
+  $result = $mysqli->query($query);
+  while ($row = $result->fetch_assoc()) {
+	$results_array[] = $row;
+  }
+  foreach ($results_array as &$rows) {
+	  if ($ip == $rows["IP"]) {
+		return true;  
+	  }
+  }
   return false;
 }
 
@@ -53,6 +58,9 @@ function redir($url) {
     print '</body>';
     print '</html>';
 }
+
+function redirect($url)
+{redir($url);}
 
 function escape_string($mysqli,$unesc)
 {

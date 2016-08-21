@@ -1,6 +1,6 @@
 <?php
 	require_once "core/config.core.php";
-	require_once "func.php";
+	require_once "functions/functions.php";
 	
 	$table = DB_TABLE;
 	$lnk = SHORT_DOMAIN;
