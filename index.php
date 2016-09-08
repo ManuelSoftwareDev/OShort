@@ -27,7 +27,7 @@
 	</head>
 	<body>
 	    <header class="header">
-            <p>ShortMe</p>
+            <p>ShortMe Open Alpha</p>
             <nav>               
                 <a href="#">Shortener</a>
                 <a href="statistik.php">Statistik</a>                
@@ -40,7 +40,7 @@
 		    <p>Bitte den zu kürzenden Link eingeben:</p>
             <form method="POST" action="index.php">
 				<input type="hidden" value="shrink" name="do">
-	            <input type="url" name="url" class="input" id="url" placeholder="http://www.myexamplepage.com/" text-align="center" required>
+	            <input type="url" name="url" class="input" id="url" placeholder="http://www.example.com/john-doe" text-align="center" required>
 			    <button class="button" type="button" onclick="document.location='statistik.php';" value="Statistik">Statistik</button>
 		        <button class="button" type="submit" value="Erstellen"> Erstellen </button>
 		    </form>
@@ -49,13 +49,13 @@
 
 				if (isset($_GET["say"])) 
 				{
-					$sSay = $_GET["say"];
-					$sMessage = $_GET["message"];
-					$sSpan = $_GET["span"];
+					$sSay = htmlentities($_GET["say"], ENT_QUOTES);
+					$sMessage = htmlentities($_GET["message"], ENT_QUOTES);
+					$sSpan = htmlentities($_GET["span"], ENT_QUOTES);
 					echo "<div class=\"alert ". $sSay ."\">";
 					echo "<span>". $sSpan .":</span>  ". $sMessage;
 					echo "</div>";
-				}
+				}		
 				
 				if (isset($_POST["do"]) || isset($_GET["do"]) 
 				{
