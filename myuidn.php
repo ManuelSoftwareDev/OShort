@@ -9,9 +9,16 @@ $uidn = getUIDN();
 	<head>
 		<!-- Activate Meta Charset UTF-8 -->
 		<meta charset="utf-8" />
-		<!-- Stylesheet and FavIcon Implementation -->
-        <link rel="stylesheet" type="text/css" href="style/design.css">
+		
+		<!-- Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="http://public.sln-tools.net/provide.php?file=design">
+		
+		<!-- Alternative -->
+		<!-- <link rel="stylesheet" type="text/css" href="PATH_TO_STYLESHEET.CSS"> -->
+		
+		<!-- Favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+		
 	    <!-- Title -->
 		<title> <? print TITLE; ?> - Deine UIDN </title>
 	</head>
@@ -23,7 +30,7 @@ $uidn = getUIDN();
 				</a>
 			</h3>
 			
-			<strong>Deine UIDN funktioniert nur, wenn du einen oder mehrere Kurzlink(s) angelegt hast.</strong>
+			<strong>Deine UIDN funktioniert nur, wenn du einen/mehrere Kurzlink(s) angelegt hast.</strong>
 			
 			<? include_once "content/footer.html"; ?>
 		</div>

@@ -4,8 +4,14 @@
     <head>
         <!-- Activate Meta Charset UTF-8 -->
 		<meta charset="utf-8" />
-		<!-- Stylesheet and FavIcon Implementation -->
-        <link rel="stylesheet" type="text/css" href="style/design.css">
+		
+		<!-- Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="http://public.sln-tools.net/provide.php?file=design">
+		
+		<!-- Alternative -->
+		<!-- <link rel="stylesheet" type="text/css" href="PATH_TO_STYLESHEET.CSS"> -->
+		
+		<!-- Favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	    <!-- Title -->
 	    <title><? print TITLE; ?> - Statistik</title>

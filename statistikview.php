@@ -57,12 +57,19 @@ function printLinks()
 
 <html lang="de">
     <head>
-        <!-- Activate Meta Charset UTF-8 -->
+       <!-- Activate Meta Charset UTF-8 -->
 		<meta charset="utf-8" />
-		<!-- Stylesheet and FavIcon Implementation -->
-        <link rel="stylesheet" type="text/css" href="style/design.css">
+		
+		<!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="http://public.sln-tools.net/provide.php?file=design">
+        <link rel="stylesheet" type="text/css" href="http://public.sln-tools.net/provide.php?file=table">
+		
+		<!-- Alternative -->
+		<!-- <link rel="stylesheet" type="text/css" href="PATH_TO_STYLESHEET.CSS"> -->
+		
+		<!-- Favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-        <link rel="stylesheet" type="text/css" href="style/table.css">
+		
 	    <!-- Title -->
 		<title><? print TITLE; ?> - Statistik</title>
 	</head>
