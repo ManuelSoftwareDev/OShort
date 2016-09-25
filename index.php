@@ -64,7 +64,7 @@
 					echo "</div>";
 				}		
 				
-				if (isset($_POST["do"]) || isset($_GET["do"]) 
+				if (isset($_POST["do"]) || isset($_GET["do"])) 
 				{
 					$do = $_POST["do"];
 					$k = $_POST["k"];

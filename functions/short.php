@@ -22,7 +22,7 @@
 	$forbittenProtocols = array('javascript:', 'whatsapp:', 'mailto:', 'skype:', 'world:', 'download:');
 		
 	#Checking wether the forbitten Sites, Words or Protocols contains in the Link.
-	for(int $i = 0; $i <= count($shortLinkProviders); $i++)
+	for($i = 0; $i < count($shortLinkProviders); $i++)
 	{
 		$val = $shortLinkProviders[$i];
 		if(strpos($link, $val))
@@ -33,7 +33,7 @@
 			return false;
 		}
 	}
-	for(int $i = 0; $i <= count($ownShortLink); $i++)
+	for($i = 0; $i < count($ownShortLink); $i++)
 	{
 		$val = $ownShortLink[$i];
 		if(strpos($link, $val))
@@ -44,7 +44,7 @@
 			return false;
 		}
 	}	
-	for(int $i = 0; $i <= count($forbittenWordsOrSites); $i++)
+	for($i = 0; $i < count($forbittenWordsOrSites); $i++)
 	{
 		$val = $forbittenWordsOrSites[$i];
 		if(strpos($link, $val))
@@ -56,7 +56,7 @@
 		}
 	}
 	
-	for(int $i = 0; $i <= count($forbittenProtocols); $i++)
+	for($i = 0; $i < count($forbittenProtocols); $i++)
 	{
 		$val = $forbittenProtocols[$i];
 		if(substr($link, 0, strlen($val)) === $val)
@@ -114,14 +114,13 @@ genNew: $sLink = generateKey(6);
 	}
 		
 	#Generate a Key
-	function generateKey(int keyLength)
+	function generateKey($keyLength)
 	{
-		$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_";
+		$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890___004lljj";
 		$key = "";
-		for($i = 1; $i <= keyLength; $i++)
+		for($i = 1; $i <= $keyLength; $i++)
 		{
-			$key = $key . $chars[rand(0,strlen($chars)];
+		$key .= substr($chars,rand(0,strlen($chars),1));
 		}     			
 	}
-}
 ?>
